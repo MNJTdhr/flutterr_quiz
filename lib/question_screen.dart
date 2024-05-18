@@ -11,7 +11,7 @@ class QuestionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 30),
+        margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 40),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -30,7 +30,6 @@ class QuestionScreen extends StatelessWidget {
                   incomingText: answerItemsFromQuestionData,
                   onTap: () {},
                 );
-                //dynamic! Replaced all other answer buttons
               },
             ),
           ],

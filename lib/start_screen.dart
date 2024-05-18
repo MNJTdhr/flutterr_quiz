@@ -31,9 +31,9 @@ class StartScreen extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: OutlinedButton.icon(
+            child: ElevatedButton.icon(
               onPressed: onPressed,
-              style: OutlinedButton.styleFrom(
+              style: ElevatedButton.styleFrom(
                 backgroundColor: const Color.fromARGB(255, 27, 0, 79),
                 foregroundColor: Colors.white,
                 padding:
