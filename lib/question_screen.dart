@@ -10,10 +10,18 @@ class QuestionScreen extends StatefulWidget {
 }
 
 class _QuestionScreenState extends State<QuestionScreen> {
-  final currentQuestion = questions[0];
+  var currentQuestionIndex = 0;
+
+  void answerQuestion() {
+    setState(() {
+    currentQuestionIndex++;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
+    final currentQuestion = questions[currentQuestionIndex];
+
     return Center(
       child: Container(
         margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 40),
@@ -33,7 +41,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
               (answerItemsFromQuestionData) {
                 return AnswerButton(
                   incomingText: answerItemsFromQuestionData,
-                  onTap: () {},
+                  onTap: answerQuestion,
                 );
               },
             ),
