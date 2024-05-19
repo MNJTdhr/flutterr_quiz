@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'data/questions_data.dart';
 import 'answer_button.dart';
 
-class QuestionScreen extends StatelessWidget {
-  QuestionScreen({super.key});
+class QuestionScreen extends StatefulWidget {
+  const QuestionScreen({super.key});
 
+  @override
+  State<QuestionScreen> createState() => _QuestionScreenState();
+}
+
+class _QuestionScreenState extends State<QuestionScreen> {
   final currentQuestion = questions[0];
 
   @override
@@ -24,7 +29,7 @@ class QuestionScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
             ),
-            ...currentQuestion.answers.map(
+            ...currentQuestion.getShuffledAnswers().map(
               (answerItemsFromQuestionData) {
                 return AnswerButton(
                   incomingText: answerItemsFromQuestionData,

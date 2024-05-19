@@ -24,7 +24,7 @@ class _MyAppState extends State<MyApp> {
 
   void changeScreen() {
     setState(() {
-      activeScreen = QuestionScreen();
+      activeScreen = const QuestionScreen();
     });
   }
 
