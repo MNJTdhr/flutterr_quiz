@@ -15,7 +15,8 @@ class QuestionScreen extends StatefulWidget {
 class _QuestionScreenState extends State<QuestionScreen> {
   var currentQuestionIndex = 0;
 
-  void answerQuestion() {
+  void answerQuestion(String selectedAnswer) {
+    widget.onSelectAnswer(selectedAnswer);
     setState(() {
       currentQuestionIndex++;
     });
@@ -48,7 +49,9 @@ class _QuestionScreenState extends State<QuestionScreen> {
               (answerItemsFromQuestionData) {
                 return AnswerButton(
                   incomingText: answerItemsFromQuestionData,
-                  onTap: answerQuestion,
+                  onTap: () {
+                    answerQuestion(answerItemsFromQuestionData);
+                  },
                 );
               },
             ),
