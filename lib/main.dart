@@ -17,7 +17,8 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   Widget? activeScreen;
-  final List<String> selectedAnswers = [];  //To count all answers later
+  List<String> selectedAnswers = [];
+  //To count all answers later
 
   @override
   void initState() {
@@ -36,7 +37,9 @@ class _MyAppState extends State<MyApp> {
 
     if (selectedAnswers.length == questions.length) {
       setState(() {
-        activeScreen = const ResultScreen();  
+        activeScreen = ResultScreen(
+          choosenAnswers: selectedAnswers,
+        );
       }); //using this we can return to the start screen as well
     }
   }
