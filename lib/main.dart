@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterr_quiz/data/questions_data.dart';
 import 'start_screen.dart';
 import 'question_screen.dart';
+import 'result_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   Widget? activeScreen;
-  final List<String> selectedAnswers = [];
+  final List<String> selectedAnswers = [];  //To count all answers later
 
   @override
   void initState() {
@@ -35,8 +36,8 @@ class _MyAppState extends State<MyApp> {
 
     if (selectedAnswers.length == questions.length) {
       setState(() {
-        activeScreen = StartScreen(changeScreen);
-      });
+        activeScreen = const ResultScreen();  
+      }); //using this we can return to the start screen as well
     }
   }
 
